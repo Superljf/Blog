@@ -10,7 +10,7 @@ console.log(obj) // {x: "x", y: "y"}
 
 #### Object.entries()
 
-##### 用于将对象转换为数组
+用于将对象转换为数组
 
 ```js
 const credits = {
@@ -29,7 +29,7 @@ console.log(arr)
 
 ####  Object.values()
 
-##### 用于取出对象中的值
+用于取出对象中的值
 
 ```js
 const credits = {
@@ -59,7 +59,7 @@ console.log(multiLineString)
 
 #### Array.find 简写
 
-###### 用于取出自己想要的键和值
+用于取出自己想要的键和值
 
 ```
 const pets = [{
@@ -83,7 +83,7 @@ console.log(pet) // { type: 'Dog', name: 'Tommy' }
 
 #### charAt() 简写
 
-###### 字符串截取取出相应的字符，可以说是非常非常的nice
+字符串截取取出相应的字符，可以说是非常非常的nice
 
 ```js
 'SampleString'.charAt(0) // S
@@ -94,7 +94,7 @@ console.log(pet) // { type: 'Dog', name: 'Tommy' }
 
 #### 有条件的函数调用
 
-###### 三元运算符去控制函数的调用 nice
+三元运算符去控制函数的调用 nice
 
 ![image-20200911100449139](C:\Users\SuperLjf\AppData\Roaming\Typora\typora-user-images\image-20200911100449139.png)
 
@@ -120,7 +120,7 @@ console.log(`${someNumber}`) // "123"
 
 #### 方法参数验证
 
-######  ES6 中可以为函数的参数设置默认值，有了这个，我们可以实现一个验证方法参数不能为空的巧妙技巧。
+ ES6 中可以为函数的参数设置默认值，有了这个，我们可以实现一个验证方法参数不能为空的巧妙技巧。
 
 ```
 
@@ -195,3 +195,127 @@ console.log(array.slice(-3))
  
 ```
 
+#### 如何隐藏所有指定的元素
+
+```js
+const hide2 = (el) => Array.from(el).forEach(e => (e.style.display = 'none'));
+
+// 事例:隐藏页面上所有`<img>`元素?
+hide(document.querySelectorAll('img'))
+```
+
+#### 如何检查元素是否具有指定的类？
+
+页面DOM里的每个节点上都有一个`classList`对象，程序员可以使用里面的方法新增、删除、修改节点上的CSS类。使用`classList`，程序员还可以用它来判断某个节点是否被赋予了某个CSS类。
+
+```js
+const hasClass = (el, className) => el.classList.contains(className)
+
+// 事例
+hasClass(document.querySelector('p.special'), 'special') // true
+```
+
+#### 3.如何切换一个元素的类?
+
+```
+const toggleClass = (el, className) => el.classList.toggle(className)
+
+// 事例 移除 p 具有类`special`的 special 类
+toggleClass(document.querySelector('p.special'), 'special')
+```
+
+#### 4.如何获取当前页面的滚动位置？
+
+```
+const getScrollPosition = (el = window) => ({
+  x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
+  y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
+});
+
+// 事例
+getScrollPosition(); // {x: 0, y: 200}
+```
+
+#### 6.如何检查父元素是否包含子元素？
+
+```js
+const elementContains = (parent, child) => parent !== child && parent.contains(child);
+
+// 事例
+elementContains(document.querySelector('head'), document.querySelector('title')); 
+// true
+elementContains(document.querySelector('body'), document.querySelector('body')); 
+// false
+```
+
+#### 如何获取元素中的所有图像？
+
+```js
+const getImages = (el, includeDuplicates = false) => {
+  const images = [...el.getElementsByTagName('img')].map(img => img.getAttribute('src'));
+  return includeDuplicates ? images : [...new Set(images)];
+};
+
+// 事例：includeDuplicates 为 true 表示需要排除重复元素
+getImages(document, true); // ['image1.jpg', 'image2.png', 'image1.png', '...']
+getImages(document, false); // ['image1.jpg', 'image2.png', '...']
+```
+
+#### How to get the current URL?
+
+```js
+const currentURL = () => window.location.href
+
+// 事例
+currentURL() // 'https://google.com'
+```
+
+#### 11.如何创建一个包含当前URL参数的对象？
+
+```js
+const getURLParameters = url =>
+  (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
+    (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a),
+    {}
+  );
+
+// 事例
+getURLParameters('http://url.com/page?n=Adam&s=Smith'); // {n: 'Adam', s: 'Smith'}
+getURLParameters('google.com'); // {}
+```
+
+#### 14.`如何在等待指定时间后调用提供的函数？`
+
+```js
+const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
+delay(
+  function(text) {
+    console.log(text);
+  },
+  1000,
+  'later'
+); 
+
+// 1秒后打印 'later'
+```
+
+#### 15.如何在给定元素上触发特定事件且能选择地传递自定义数据？
+
+```js
+const triggerEvent = (el, eventType, detail) =>
+  el.dispatchEvent(new CustomEvent(eventType, { detail }));
+
+// 事例
+triggerEvent(document.getElementById('myId'), 'click');
+triggerEvent(document.getElementById('myId'), 'click', { username: 'bob' });
+```
+
+#### 18.如何获得两个日期之间的差异（以天为单位）？
+
+```js
+const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
+  (dateFinal - dateInitial) / (1000 * 3600 * 24);
+
+// 事例
+getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
+```
