@@ -118,3 +118,80 @@ console.log(`${someNumber}`) // "123"
 
 ```
 
+#### 方法参数验证
+
+######  ES6 中可以为函数的参数设置默认值，有了这个，我们可以实现一个验证方法参数不能为空的巧妙技巧。
+
+```
+
+const isRequired = () => { 
+  throw new Error('param is required')
+}
+ 
+const print = (num = isRequired()) => { 
+  console.log(`printing ${num}`) 
+}
+ 
+print(2) //printing 2
+print() // error
+print(null) //printing null
+
+```
+
+#### 格式化JSON代码
+
+`stringify` 方法有三个参数：`value`，`replacer`和`space`。其中，后两个是可选参数，这也是我们很少知道它的原因。要缩进JSON，必须使用`space`参数。
+
+```js
+console.log(JSON.stringify({name:"John",Age:23},null,'\t'));
+>>> 
+{
+ "name": "John",
+ "Age": 23
+}
+```
+
+#### 从数组中获取惟一的值
+
+```js
+let uniqueArray = [...new Set([1, 2, 3, 3,3,"school","school",'ball',false,false,true,true])];
+ 
+>>> [1, 2, 3, "school", "ball", false, true]
+```
+
+#### 排序数字数组
+
+```js
+[0,10,4,9,123,54,1].sort((a,b) => a-b)
+ 
+>>> [0, 1, 4, 9, 10, 54, 123]
+```
+
+#### 在解构中使用别名
+
+```js
+const object = { number: 10 }
+ 
+const { number } = object
+ 
+// 使用别名
+const { number: otherNumber } = object
+ 
+console.log(otherNumber) //10
+```
+
+#### 获取数组中的最后一项
+
+```js 
+ let array = [0, 1, 2, 3, 4, 5, 6, 7] 
+console.log(array.slice(-1))
+>>>[7]
+ 
+console.log(array.slice(-2))
+>>>[6, 7]
+ 
+console.log(array.slice(-3))
+>>>[5, 6, 7]
+ 
+```
+
