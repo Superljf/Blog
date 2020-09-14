@@ -5,30 +5,18 @@
 
 收藏点star，订阅点watch
 
-## 最新文章
-* 2020-01-14 - [使用Vue 3.0做JSX(TSX)风格的组件开发](https://github.com/hujiulong/blog/issues/11)
+## 我的CSDN
+* 2019-7-01 - [看看我的CSDN博客](https://blog.csdn.net/weixin_45416217)
 
 ## 目录
 
-### React
+### 前端基础扎实
 
-* [从零开始实现一个React（四）：异步的setState](https://github.com/hujiulong/blog/issues/7)
-* [从零开始实现一个React（三）：diff算法](https://github.com/hujiulong/blog/issues/6)
-* [从零开始实现一个React（二）：组件和生命周期](https://github.com/hujiulong/blog/issues/5)
-* [从零开始实现一个React（一）：JSX和虚拟DOM](https://github.com/hujiulong/blog/issues/4)
+* [CSS的巧妙布局设计实现](https://github.com/Superljf/The-front-end-warehouse/issues/1)
+* [JS的工具函数封装使用](https://github.com/Superljf/The-front-end-warehouse/issues/2)
 
-### Vue
 
-* [使用Vue 3.0做JSX(TSX)风格的组件开发](https://github.com/hujiulong/blog/issues/11)
 
-### 图形
-
-* [在canvas中模拟光照效果——光照下颜色的计算](https://github.com/hujiulong/blog/issues/2)
-* [用canvas绘制一个曲线动画——深入理解贝塞尔曲线](https://github.com/hujiulong/blog/issues/1)
-
-### 其他
-* [通过分析AST自动重构three.js的老旧代码](https://github.com/hujiulong/blog/issues/10)
-* [无聊系列：怎样给文件命名显得比较专业](https://github.com/hujiulong/blog/issues/3)
 
 ## LICENSE
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)
