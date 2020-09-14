@@ -1,181 +1,34 @@
-# The-front-end-warehouse
-HTML CSS javaScript accumulation
+# Blog
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
 
+我的技术博客，不定时更新
 
+收藏点star，订阅点watch
 
-####  值到对象的映射
+## 最新文章
+* 2020-01-14 - [使用Vue 3.0做JSX(TSX)风格的组件开发](https://github.com/hujiulong/blog/issues/11)
 
-```js
-let x='x',y='y'
-let obj = {x,y}
+## 目录
 
-console.log(obj) // {x: "x", y: "y"}
+### React
 
-```
+* [从零开始实现一个React（四）：异步的setState](https://github.com/hujiulong/blog/issues/7)
+* [从零开始实现一个React（三）：diff算法](https://github.com/hujiulong/blog/issues/6)
+* [从零开始实现一个React（二）：组件和生命周期](https://github.com/hujiulong/blog/issues/5)
+* [从零开始实现一个React（一）：JSX和虚拟DOM](https://github.com/hujiulong/blog/issues/4)
 
-#### Object.entries()
+### Vue
 
-##### 用于将对象转换为数组
+* [使用Vue 3.0做JSX(TSX)风格的组件开发](https://github.com/hujiulong/blog/issues/11)
 
-```js
-const credits = {
-  producer: '大迁世界',
-  name: '前端小智',
-  rating: 9
-}
-const arr = Object.entries(credits)
-console.log(arr)
+### 图形
 
-*** 输出 ***
-[ [ 'producer', '大迁世界' ], [ 'name', '前端小智' ], [ 'rating', 9 ] ]
+* [在canvas中模拟光照效果——光照下颜色的计算](https://github.com/hujiulong/blog/issues/2)
+* [用canvas绘制一个曲线动画——深入理解贝塞尔曲线](https://github.com/hujiulong/blog/issues/1)
 
+### 其他
+* [通过分析AST自动重构three.js的老旧代码](https://github.com/hujiulong/blog/issues/10)
+* [无聊系列：怎样给文件命名显得比较专业](https://github.com/hujiulong/blog/issues/3)
 
-```
-
-####  Object.values()
-
-##### 用于取出对象中的值
-
-```js
-const credits = {
-  producer: '大迁世界',
-  name: '前端小智',
-  rating: 9
-}
-const arr = Object.values(credits)
-console.log(arr)
-
-*** 输出 ***
-
-[ '大迁世界', '前端小智', 9 ]
-
-```
-
-#### 多行字符串
-
-```js
-let multiLineString = `some string\n
-with multi-line of\n
-characters\n`
-
-console.log(multiLineString)
-
-```
-
-#### Array.find 简写
-
-###### 用于取出自己想要的键和值
-
-```
-const pets = [{
-    type: 'Dog',
-    name: 'Max'
-  },
-  {
-    type: 'Cat',
-    name: 'Karl'
-  },
-  {
-    type: 'Dog',
-    name: 'Tommy'
-  }
-]
-pet = pets.find(pet => pet.type === 'Dog' && pet.name === 'Tommy')
-
-console.log(pet) // { type: 'Dog', name: 'Tommy' }
-
-```
-
-#### charAt() 简写
-
-###### 字符串截取取出相应的字符，可以说是非常非常的nice
-
-```js
-'SampleString'.charAt(0) // S
-// 简写
-'SampleString'[0]
-
-```
-
-
-#### 将字符串转换为数字
-
-```js
-const num1 = parseInt('100')
-// 简写
-console.log(+"100")
-console.log(+"100.2")
-
-```
-
-#### toString简写
-
-```js
-let someNumber = 123
-console.log(someNumber.toString()) // "123"
-// 简写
-console.log(`${someNumber}`) // "123"
-
-```
-
-#### 方法参数验证
-
-######  ES6 中可以为函数的参数设置默认值，有了这个，我们可以实现一个验证方法参数不能为空的巧妙技巧。
-
-```
-const isRequired = () => { 
-  throw new Error('param is required')
-}
- 
-const print = (num = isRequired()) => { 
-  console.log(`printing ${num}`) 
-}
- 
-print(2) //printing 2
-print() // error
-print(null) //printing null
-
-```
-
-#### 格式化JSON代码
-
-`stringify` 方法有三个参数：`value`，`replacer`和`space`。其中，后两个是可选参数，这也是我们很少知道它的原因。要缩进JSON，必须使用`space`参数。
-
-```js
-console.log(JSON.stringify({name:"John",Age:23},null,'\t'));
->>> 
-{
- "name": "John",
- "Age": 23
-}
-```
-
-#### 从数组中获取惟一的值
-
-```js
-let uniqueArray = [...new Set([1, 2, 3, 3,3,"school","school",'ball',false,false,true,true])];
- 
->>> [1, 2, 3, "school", "ball", false, true]
-```
-
-#### 排序数字数组
-
-```js
-[0,10,4,9,123,54,1].sort((a,b) => a-b)
- 
->>> [0, 1, 4, 9, 10, 54, 123]
-```
-
-#### 在解构中使用别名
-
-```js
-const object = { number: 10 }
- 
-const { number } = object
- 
-// 使用别名
-const { number: otherNumber } = object
- 
-console.log(otherNumber) //10
-```
-
+## LICENSE
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)
