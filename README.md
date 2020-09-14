@@ -12,8 +12,8 @@
 
 ### 前端基础扎实
 
-* [CSS的巧妙布局设计实现](https://github.com/Superljf/The-front-end-warehouse/issues/1)
-* [JS的工具函数封装使用](https://github.com/Superljf/The-front-end-warehouse/issues/2)
+* [CSS的巧妙布局设计实现](https://github.com/Superljf/The-front-end-warehouse/blob/master/CSS.md)
+* [JS的工具函数封装使用](https://github.com/Superljf/The-front-end-warehouse/blob/master/javaScript.md)
 
 
 
