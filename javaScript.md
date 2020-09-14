@@ -319,3 +319,24 @@ const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
 // 事例
 getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 ```
+
+#### setTimeout()接受两个参数，第一个是回调函数，第二个是推迟执行的毫秒数。
+
+> ```javascript
+> console.log(1);
+> setTimeout(function(){console.log(2);},1000);
+> console.log(3);
+> ```
+
+上面代码的执行结果是1，3，2，因为setTimeout()将第二行推迟到1000毫秒之后执行。
+
+如果将setTimeout()的第二个参数设为0，就表示当前代码执行完（执行栈清空）以后，立即执行（0毫秒间隔）指定的回调函数。
+
+> ```javascript
+> setTimeout(function(){console.log(1);}, 0);
+> console.log(2);
+> ```
+
+上面代码的执行结果总是2，1，因为只有在执行完第二行以后，系统才会去执行"任务队列"中的回调函数。
+
+总之，setTimeout(fn,0)的含义是，指定某个任务在主线程最早可得的空闲时间执行，也就是说，尽可能早得执行。它在"任务队列"的尾部添加一个事件，因此要等到同步任务和"任务队列"现有的事件都处理完，才会得到执行。
