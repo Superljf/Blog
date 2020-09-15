@@ -1,9 +1,9 @@
 # Blog
-我的技术博客，不定时更新
+ 日积月累 存于点滴
 收藏点star，订阅点watch
 
 ## 我的CSDN
-[![](https://img.shields.io/badge/CSDN-%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E8%AF%97-brightgreen)](点击超链接)
+[![](https://img.shields.io/badge/CSDN-%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E8%AF%97-brightgreen)](https://blog.csdn.net/weixin_45416217)
 
 * 2019-7-01 - [看看我的CSDN博客](https://blog.csdn.net/weixin_45416217)
 
