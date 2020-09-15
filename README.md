@@ -4,9 +4,8 @@
 收藏点star，订阅点watch
 
 ## 日常分享
-[![](https://img.shields.io/badge/CSDN-%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E8%AF%97-brightgreen)](https://blog.csdn.net/weixin_45416217)
 
-* 2019-07-01 - [看看我的CSDN博客](https://blog.csdn.net/weixin_45416217)
+* 2019-07-01 - [![](https://img.shields.io/badge/CSDN-%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E8%AF%97-brightgreen)](https://blog.csdn.net/weixin_45416217)
 
 ## 目录
 
