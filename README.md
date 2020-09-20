@@ -13,7 +13,6 @@
 
 * [CSS的巧妙布局设计实现](https://github.com/Superljf/The-front-end-warehouse/blob/master/CSS.md)
 * [JS的常用技巧](https://github.com/Superljf/Blog/blob/master/javaScript%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.md)
-* [JS的工具函数集](https://github.com/Superljf/Blog/blob/master/Other/JS%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0.md)
 
 
 
