@@ -1,3 +1,0 @@
-![image-20200819142254605](C:\Users\SuperLjf\AppData\Roaming\Typora\typora-user-images\image-20200819142254605.png)众所周知，第一次打开Vue的时候，如果你的项目够大，那么首次加载资源时，会非常的久。由于资源没有加载完毕，界面的DOM也不会渲染，会造成白屏的问题。用户此时并不知道是加载的问题，所以会带来一个不好的体验。因此通常会在public下写一个加载动画，告诉用户，网页在加载中这个提示。当页面加载成功后，页面渲染出来的这一个体验比白屏等开机要好太多了。因此，推荐大家都设计一个自家公司的loading加载方式放入index.html中吧。
-
-![img](https://user-gold-cdn.xitu.io/2020/7/14/1734b62b384cb34c?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
