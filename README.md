@@ -20,17 +20,4 @@
 ## LICENSE
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)
 
-```js
-  proxy: {
-    '/store/api/': {
-      'target': 'http://127.0.0.1:8080/store/api',
-      'changeOrigin': true,
-      'pathRewrite': { "^/" : "" },
-    },
-    '/fs/api/': {
-      target: 'http://192.168.10.89',
-      changeOrigin: true,
-    },
-  },
-```
 
