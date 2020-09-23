@@ -1,19 +1,18 @@
 # Blog
-[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+ 日积月累 存于点滴 
+ 
+不停更新 收藏点star，订阅点watch
 
-我的技术博客，不定时更新
+## 看看我的CSDN吧
 
-收藏点star，订阅点watch
-
-## 我的CSDN
-* 2019-7-01 - [看看我的CSDN博客](https://blog.csdn.net/weixin_45416217)
+* 2019-07-01 - [![](https://img.shields.io/badge/CSDN-%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E8%AF%97-brightgreen)](https://blog.csdn.net/weixin_45416217)
 
 ## 目录
 
-### 前端基础扎实
+### 夯实基础
 
-* [CSS的巧妙布局设计实现](https://github.com/Superljf/The-front-end-warehouse/issues/1)
-* [JS的工具函数封装使用](https://github.com/Superljf/The-front-end-warehouse/issues/2)
+* [CSS的巧妙布局设计实现](https://github.com/Superljf/The-front-end-warehouse/blob/master/CSS.md)
+* [JS的常用技巧](https://github.com/Superljf/Blog/blob/master/javaScript%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.md)
 
 
 
