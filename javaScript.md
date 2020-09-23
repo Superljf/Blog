@@ -340,3 +340,92 @@ getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 上面代码的执行结果总是2，1，因为只有在执行完第二行以后，系统才会去执行"任务队列"中的回调函数。
 
 总之，setTimeout(fn,0)的含义是，指定某个任务在主线程最早可得的空闲时间执行，也就是说，尽可能早得执行。它在"任务队列"的尾部添加一个事件，因此要等到同步任务和"任务队列"现有的事件都处理完，才会得到执行。
+
+#### 创建对象的几种方式
+
+```js
+ //创建对象的几种方式
+        //1.字面量
+        var obj1 = {name: 'solo obj1'};
+        //2.new Object
+        var obj2 = new Object({name: 'solo obj2'})
+        //3.构造函数创建
+        var M = function(name){
+            this.name = name;
+        }
+        var obj3 = new M('solo obj3');
+        //4.Object.create
+        var p = {name: 'p'};
+        var obj4 = Object.create(p);
+
+```
+
+####  instanceof 和 typeof 的区别
+
+typeof 对于基本数据类型（null, undefined, string, number, boolean, symbol），除了 null 都会返回正确的类型。null 会返回 object。
+typeof 对于对象类型，除了函数会返回 function，其他的都返回 object。
+如果我们想获得一个变量的正确类型，可以通过 `Object.prototype.toString.call(xx)`。这样我们就可以获得类似 `[object Type]` 的字符串。
+
+```js
+
+```
+
+#### Promise 处理错误异常
+
+```js
+function toUppercase(string) {
+  if (typeof string !== "string") {
+    throw TypeError("Wrong type given, expected a string");
+  }
+
+  return string.toUpperCase();
+}
+
+toUppercase(4);
+
+因为使用了 Promise ，所以可以使用 then 来接收返回的内容，或者用 catch 来捕获出现的错误。
+toUppercase(99)
+  .then(result => result)
+  .catch(error => console.error(error.message));
+
+
+```
+
+
+
+```js
+
+
+function toUppercase(string) {
+  if (typeof string !== "string") {
+    return Promise.reject(TypeError("Wrong type given, expected a string"));
+  }
+
+  const result = string.toUpperCase();
+
+  return Promise.resolve(result);
+}
+
+
+```
+
+```js
+					{@else if it.markState==3} 
+										{@if it.statisticalRule == 1} 
+											<td>
+												<span style="color: #CCCCCC;">&nbsp;
+												{@if it.totalConvertMark == ''}
+												${it.totalMark}
+												{@else}
+												${it.totalConvertMark}
+												{@/if}
+												</span>
+											</td>
+											<td>--</td>
+										{@else} 
+										<td><span style="color: #CCCCCC;">&nbsp;不统计</span></td>
+										<td>--</td>
+										{@/if}					
+									{@/if}
+```
+

@@ -46,7 +46,77 @@ body {
     box-shadow: inset var(--blackShadow),
                 inset var(--whiteShadow);
 }
-
-
 ```
+
+#### 实现垂直居中
+
+- flex
+
+  ```css
+  <style type="text/css">
+    .out{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 300px;
+      background: red;
+    }
+  
+    .inner{
+      background: yellow;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+  
+  
+  ```
+  
+  - grid
+  
+    父元素指定子元素的对齐方式
+  
+    ```css
+    <style type="text/css">
+      .out{
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        width: 300px;
+        height: 300px;
+        background: red;
+      }
+    
+      .inner{
+        background: yellow;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+    
+    ```
+  
+    子元素自己指定自己的对齐方式
+  
+    ```css
+    <style type="text/css">
+      .out{
+        display: grid;
+        width: 300px;
+        height: 300px;
+        background: red;
+      }
+    
+      .inner{
+        background: yellow;
+        width: 100px;
+        height: 100px;
+        align-self: center;
+        justify-self: center;
+      }
+    </style>
+    ```
+  
+    
 
