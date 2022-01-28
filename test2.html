@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>ECharts</title>
+  <!-- 引入刚刚下载的 ECharts 文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@4.8.0/dist/echarts.js"></script>
+  <script src="https://echarts.baidu.com/resource/echarts-liquidfill-latest/dist/echarts-liquidfill.min.js"></script>
+</head>
+
+<body>
+  <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+  <div id="main" style="width:'50%';height:600px; margin: auto;"></div>
+
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+
+
+    let myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+
+    var colors = ['#5470c6', '#91cc75', '#fac858', '#ee6666', "#73c0de", '#3ba272', '#fc8452', "#9a60b4", "#ea7ccc"];
+    option = {
+      backgroundColor: '#9a1802',
+      grid: {
+        top: '10%',
+        left: '5%',
+        right: '5%',
+        bottom: '15%',
+      },
+      xAxis: [{
+          axisTick: {
+            show: false
+          },
+          axisLine: {
+            show: false
+          },
+          axisLabel: {
+            textStyle: {
+              color: '#fccd0e',
+              fontSize: 18
+            }
+          },
+          offset: 5,
+          data: ['步步高升', '余钱多多', '心想事成', '万事如意', '恭喜发财', '自强不息', '桃开连理', '一帆风顺', '身体健康']
+        },
+        {
+          axisTick: {
+            show: false
+          },
+          axisLine: {
+            show: false
+          },
+          axisLabel: {
+            show: false,
+          },
+          data: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        },
+        {
+          //name: '单位：件',
+          axisTick: {
+            show: false
+          },
+          axisLine: {
+            show: false
+          },
+          axisLabel: {
+            show: false,
+          },
+          nameGap: '50',
+          data: [],
+        },
+      ],
+      yAxis: {
+        type: 'value',
+        show: false,
+        max: 100,
+      },
+      series: [{
+          type: 'bar',
+          xAxisIndex: 0,
+          data: [23, 63, 23, 63, 23, 63, 23, 63, 23],
+          barWidth: 2,
+          itemStyle: {
+            normal: {
+              color: function (params) {
+                return colors[params.dataIndex];
+              }
+            },
+          },
+          z: 2,
+        },
+        {
+          name: '外框',
+          type: 'bar',
+          xAxisIndex: 2,
+          barGap: '-100%',
+          data: [23, 63, 23, 63, 23, 63, 23, 63, 23],
+          barWidth: 4,
+          itemStyle: {
+            normal: {
+              color: function (params) {
+                return colors[params.dataIndex];
+              },
+              barBorderRadius: 50,
+            },
+          },
+          z: 0,
+        },
+        {
+          name: '外圆',
+          type: 'scatter',
+          hoverAnimation: false,
+          data: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+          xAxisIndex: 2,
+          symbolSize: 10,
+          itemStyle: {
+            normal: {
+              color: function (params) {
+                return colors[params.dataIndex];
+              },
+              opacity: 1,
+            },
+          },
+          z: 0,
+        },
+        {
+          type: 'liquidFill',
+          radius: '25%',
+          center: ['10%', '55%'],
+          data: [1], // data个数代表波浪数
+          color: ['#5470c6'],
+          outline: { // 轮廓设置
+            show: true,
+            borderDistance: 8, // 边框与球中间间距
+            itemStyle: {
+              borderWidth: 5,
+              borderColor: '#5470c6',
+              shadowBlur: 10,
+              shadowColor: '#cf6102'
+            }
+          },
+          backgroundStyle: {
+            shadowColor: 'rgba(0, 0, 0, 0)',
+            opacity: 0,
+          },
+
+          label: {
+            textStyle: {
+              color: '#fccd0e',
+              fontSize: 28
+            }
+          }
+        }, {
+          type: 'liquidFill',
+          radius: '25%',
+          center: ['20%', '25%'],
+          data: [1], // data个数代表波浪数
+          color: ['#91cc75'],
+          outline: { // 轮廓设置
+            show: true,
+            borderDistance: 8, // 边框与球中间间距
+            itemStyle: {
+              borderWidth: 5,
+              borderColor: '#91cc75',
+              shadowBlur: 10,
+              shadowColor: '#fccd0e'
+            }
+          },
+          backgroundStyle: {
+            shadowColor: 'rgba(0, 0, 0, 0)',
+            opacity: 0,
+          },
+
+          label: {
+            textStyle: {
+              color: '#fccd0e',
+              fontSize: 28
+            }
+          }
+        }, {
+          type: 'liquidFill',
+          radius: '25%',
+          center: ['30%', '55%'],
+          data: [1], // data个数代表波浪数
+          color: ['#fac858'],
+          outline: { // 轮廓设置
+            show: true,
+            borderDistance: 8, // 边框与球中间间距
+            itemStyle: {
+              borderWidth: 5,
+              borderColor: '#fac858',
+              shadowBlur: 10,
+              shadowColor: '#fccd0e'
+            }
+          },
+          backgroundStyle: {
+            shadowColor: 'rgba(0, 0, 0, 0)',
+            opacity: 0,
+          },
+
+          label: {
+            textStyle: {
+              color: '#fccd0e',
+              fontSize: 28
+            }
+          }
+        }, {
+          type: 'liquidFill',
+          radius: '25%',
+          center: ['40%', '25%'],
+          data: [1], // data个数代表波浪数
+          color: ['#ee6666'],
+          outline: { // 轮廓设置
+            show: true,
+            borderDistance: 8, // 边框与球中间间距
+            itemStyle: {
+              borderWidth: 5,
+              borderColor: '#ee6666',
+              shadowBlur: 10,
+              shadowColor: '#fccd0e'
+            }
+          },
+          backgroundStyle: {
+            shadowColor: 'rgba(0, 0, 0, 0)',
+            opacity: 0,
+          },
+
+          label: {
+            textStyle: {
+              color: '#fccd0e',
+              fontSize: 28
+            }
+          }
+        }, {
+          type: 'liquidFill',
+          radius: '25%',
+          center: ['50%', '55%'],
+          data: [1], // data个数代表波浪数
+          color: ['#73c0de'],
+          outline: { // 轮廓设置
+            show: true,
+            borderDistance: 8, // 边框与球中间间距
+            itemStyle: {
+              borderWidth: 5,
+              borderColor: '#73c0de',
+              shadowBlur: 10,
+              shadowColor: '#fccd0e'
+            }
+          },
+          backgroundStyle: {
+            shadowColor: 'rgba(0, 0, 0, 0)',
+            opacity: 0,
+          },
+
+          label: {
+            textStyle: {
+              color: '#fccd0e',
+              fontSize: 28
+            }
+          }
+        }, {
+          type: 'liquidFill',
+          radius: '25%',
+          center: ['60%', '25%'],
+          data: [1], // data个数代表波浪数
+          color: ['#3ba272'],
+          outline: { // 轮廓设置
+            show: true,
+            borderDistance: 8, // 边框与球中间间距
+            itemStyle: {
+              borderWidth: 5,
+              borderColor: '#3ba272',
+              shadowBlur: 10,
+              shadowColor: '#fccd0e'
+            }
+          },
+          backgroundStyle: {
+            shadowColor: 'rgba(0, 0, 0, 0)',
+            opacity: 0,
+          },
+
+          label: {
+            textStyle: {
+              color: '#fccd0e',
+              fontSize: 28
+            }
+          }
+        }, {
+          type: 'liquidFill',
+          radius: '25%',
+          center: ['70%', '55%'],
+          data: [1], // data个数代表波浪数
+          color: ['#fc8452'],
+          outline: { // 轮廓设置
+            show: true,
+            borderDistance: 8, // 边框与球中间间距
+            itemStyle: {
+              borderWidth: 5,
+              borderColor: '#fc8452',
+              shadowBlur: 10,
+              shadowColor: '#fccd0e'
+            }
+          },
+          backgroundStyle: {
+            shadowColor: 'rgba(0, 0, 0, 0)',
+            opacity: 0,
+          },
+
+          label: {
+            textStyle: {
+              color: '#fccd0e',
+              fontSize: 28
+            }
+          }
+        }, {
+          type: 'liquidFill',
+          radius: '25%',
+          center: ['80%', '25%'],
+          data: [1], // data个数代表波浪数
+          color: ['#9a60b4'],
+          outline: { // 轮廓设置
+            show: true,
+            borderDistance: 8, // 边框与球中间间距
+            itemStyle: {
+              borderWidth: 5,
+              borderColor: '#9a60b4',
+              shadowBlur: 10,
+              shadowColor: '#fccd0e'
+            }
+          },
+          backgroundStyle: {
+            shadowColor: 'rgba(0, 0, 0, 0)',
+            opacity: 0,
+          },
+
+          label: {
+            textStyle: {
+              color: '#fccd0e',
+              fontSize: 28
+            }
+          }
+        }, {
+          type: 'liquidFill',
+          radius: '25%',
+          center: ['90%', '55%'],
+          data: [1], // data个数代表波浪数
+          color: ['#ea7ccc'],
+          outline: { // 轮廓设置
+            show: true,
+            borderDistance: 8, // 边框与球中间间距
+            itemStyle: {
+              borderWidth: 5,
+              borderColor: '#ea7ccc',
+              shadowBlur: 10,
+              shadowColor: '#fccd0e'
+            }
+          },
+          backgroundStyle: {
+            shadowColor: 'rgba(0, 0, 0, 0)',
+            opacity: 0,
+          },
+
+          label: {
+            textStyle: {
+              color: '#fccd0e',
+              fontSize: 28
+            }
+          }
+        },
+      ],
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+  </script>
+</body>
+
+</html>
